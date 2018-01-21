@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed');
+
+html {
+  box-sizing: border-box;
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  line-height: 1.6;
+
+  font-family: 'Saira Condensed', sans-serif;
+
+  &::before {
+    content: ' ';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/bg.jpg') 0 0/cover no-repeat;
+    z-index: -1;
+    filter: blur(2px);
+  }
+
+
+}
+
+.container {
+  width: 25em;
+  padding: 2em 2em 1.5em;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 15px 0px hsla(0, 0%, 62%, 0.45);
+}
+
+.heading {
+  background-color: #ceced6;
+  margin-top: 0;
+  padding: 1em;
+}
+
+.desc {
+  background-image: linear-gradient(90deg, #ceced6, #ceced6 30%, #fff 30%, #fff 35%, #ceced6 35%, #ceced6 50%, #fff 50%, #fff);
+  background-repeat: no-repeat;
+  padding: .5em 0;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.price {
+  font-size: 3em;
+  color: $color__secondary;
+}

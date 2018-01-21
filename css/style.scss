@@ -1,0 +1,133 @@
+/*
+Author: Mojtaba Seyedi
+Author URI: http://mojtabaseyedi.com
+Version: 1.0.0
+*/
+
+@import "normalize";
+
+$color__primary: #42cece;
+$color__secondary: #7b7b84;
+$color__secondary-alt: #f4f7f7;
+$size__width: 4.9em;
+
+@import "demo";
+
+.ms-count {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size__width;
+  height: $size__width;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  background-color: $color__secondary-alt;
+  transition: transform .2s ease;
+
+  &.is-active {
+    transform: translateX(-40%);
+  }
+
+
+  &__btn {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: $size__width/1.7;
+    height: $size__width/1.7;
+    border-radius: inherit;
+    outline: 0;
+    cursor: pointer;
+    transition: all .2s ease;
+  }
+
+  &__btn--add {
+    z-index: 2;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    background: $color__primary;
+    border: 2px solid #eee;
+    transform: translateX(0) scale(1.7);
+
+
+    &:hover,
+    &:focus {
+      transform: translateX(0) scale(1.8);
+      background: lighten($color__primary, 10%);
+    }
+
+    .is-active & {
+      transform: translateX(100%) scale(1);
+    }
+
+    .is-active &:hover,
+    .is-active &:focus {
+      transform: translateX(100%) scale(1.1);
+    }
+
+  }
+
+  &__number {
+    font-size: 2em;
+    line-height: 2;
+    color: $color__secondary;
+  }
+
+  &__btn--sub {
+    z-index: 1;
+    right: 85%;
+    background: #fff;
+    border: 2px solid $color__secondary;
+    transform: translateX(107.5%);
+
+    &:hover,
+    &:focus {
+      border-color: darken($color__secondary, 20%);
+    }
+
+    .is-active & {
+      transform: translateX(0);
+    }
+  }
+
+  &__addicon {
+    position: relative;
+    display: block;
+    width: 1em;
+    height: 2px;
+    margin: auto;
+    background-color: #fff;
+    transition: transform .2s ease;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 2px;
+      height: 1em;
+      background-color: inherit;
+    }
+  }
+
+  &__subicon {
+    display: block;
+    width: 1em;
+    height: 2px;
+    margin: auto;
+    background: $color__secondary;
+    transition: transform .2s ease;
+  }
+
+}
